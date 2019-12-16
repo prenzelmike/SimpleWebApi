@@ -1,0 +1,46 @@
+Das von detnecore generierte Certificate in /home/dalamus/.dotnet/corefx/cryptography/x509stores/my/B2225E30880205794C423F0F2827618C886F0C48.pfx ist für den Test mit IdentityServer4 nicht brauchbar. Es hat kein Passwort, wird deshalb nicht zum Aufbau einer sicheren Verbindung mit Kestrel und .net core verwendet.
+
+Stattdessen eigenes SelfSignedCertificate erstellen (Skript im Home Folder).
+#! /bin/bash
+openssl req -new -x509 -newkey rsa:2048 -keyout localhost.key -out localhost.cer -days 365 -subj /CN=localhost
+openssl pkcs12 -export -out localhost.pfx -inkey localhost.key -in localhost.cer
+
+Aus der pfx, dem PKCS12 archive dann den public key (die crt Datei) extrahieren
+sudo openssl pkcs12 -in localhost.pfx -clcerts -nokeys -out localhost.crt
+und ihn in /usr/local/share/ca-certificates/kestrel kopieren. /kestrel der Übersichtlichkeit halber. /usr/local/share/ca-certificates und alles was darunter liegt ist trusted.
+Rechte auf dem Verzeichnis /kestrel 755, auf der Datei localhost.crt 644 (chmod)
+drwxr-xr-x 2 root root 4096 Dec 12 23:10 kestrel
+-rw-r--r-- 1 root root 1254 Dec 12 23:10 localhost.crt
+
+Dann noch
+sudo update-ca-certificates
+für update der ca-certificates.crt in /etc/ssl/certs (see: http://manpages.ubuntu.com/manpages/bionic/man8/update-ca-certificates.8.html)
+
+In der WebAPI Anwendung in Program.Main
+public static void Main(string[] args)
+        {
+            if(args.Length>0)
+            {
+                Console.WriteLine(string.Format("Args on command line: {0}", String.Join(',' ,args)));
+            }
+
+            CreateWebHostBuilder(args)
+            //see https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1
+            .ConfigureKestrel(serverOptions =>
+                {
+                    serverOptions.Listen(IPAddress.Loopback,4000);
+                    serverOptions.Listen(IPAddress.Loopback,4001,
+                    listenoptions => {
+                        listenoptions.UseHttps("localhost.pfx","dalamus");
+                    });
+                })
+            //or use list of urls on the command line when starting app, e.g.
+            // dotnet SimpleWebApi.dll urls "http://localhost:4000; https://localhost:4001" 
+            .Build()
+            .Run();
+        }
+für die Kestrel Config die Ports für http und https angeben und das Zertifikat und Passwort angeben. In dem Code Beispiel hier liegt die pfx Datei im Verzeichnis, in dem auch das Skript zum Starten der Anwendung liegt. Anderen Ort (z.B. /etc/ssl/certs/<certificate.pfx) noch testen.
+Ebenfalls testen ob Certificate statt als Datei aus dem Store geladen werden kann, ohne Passwort. (see: https://stackoverflow.com/questions/46336341/configure-asp-net-core-2-0-kestrel-for-https).
+Wenn .ConfigureKestrel in Main verwendet wird, werden andere wie Parameter (z. B. die urls) aus einem Startskript überschrieben
+#! /bin/bash
+dotnet bin/Debug/netcoreapp3.1/SimpleWebApi.dll --urls "http://localhost:4000;https://localhost:4001" --environment=Development

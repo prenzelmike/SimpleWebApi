@@ -1,0 +1,28 @@
+D:/Users/Michael/Documents/Visual Studio Code/SimpleWebApi/bin/Debug/netcoreapp2.2/SimpleWebApi.deps.json
+D:/Users/Michael/Documents/Visual Studio Code/SimpleWebApi/bin/Debug/netcoreapp2.2/SimpleWebApi.runtimeconfig.json
+D:/Users/Michael/Documents/Visual Studio Code/SimpleWebApi/bin/Debug/netcoreapp2.2/SimpleWebApi.runtimeconfig.dev.json
+d:/Users/Michael/Documents/Visual Studio Code/SimpleWebApi/bin/Debug/netcoreapp2.2/SimpleWebApi.dll
+d:/Users/Michael/Documents/Visual Studio Code/SimpleWebApi/bin/Debug/netcoreapp2.2/SimpleWebApi.pdb
+d:/Users/Michael/Documents/Visual Studio Code/SimpleWebApi/obj/Debug/netcoreapp2.2/SimpleWebApi.csprojAssemblyReference.cache
+d:/Users/Michael/Documents/Visual Studio Code/SimpleWebApi/obj/Debug/netcoreapp2.2/SimpleWebApi.csproj.CoreCompileInputs.cache
+d:/Users/Michael/Documents/Visual Studio Code/SimpleWebApi/obj/Debug/netcoreapp2.2/SimpleWebApi.RazorAssemblyInfo.cache
+d:/Users/Michael/Documents/Visual Studio Code/SimpleWebApi/obj/Debug/netcoreapp2.2/SimpleWebApi.RazorAssemblyInfo.cs
+d:/Users/Michael/Documents/Visual Studio Code/SimpleWebApi/obj/Debug/netcoreapp2.2/SimpleWebApi.AssemblyInfoInputs.cache
+d:/Users/Michael/Documents/Visual Studio Code/SimpleWebApi/obj/Debug/netcoreapp2.2/SimpleWebApi.AssemblyInfo.cs
+d:/Users/Michael/Documents/Visual Studio Code/SimpleWebApi/obj/Debug/netcoreapp2.2/SimpleWebApi.RazorTargetAssemblyInfo.cache
+d:/Users/Michael/Documents/Visual Studio Code/SimpleWebApi/obj/Debug/netcoreapp2.2/SimpleWebApi.dll
+d:/Users/Michael/Documents/Visual Studio Code/SimpleWebApi/obj/Debug/netcoreapp2.2/SimpleWebApi.pdb
+/home/dalamus/Documents/Development/SimpleWebApi/bin/Debug/netcoreapp2.2/SimpleWebApi.deps.json
+/home/dalamus/Documents/Development/SimpleWebApi/bin/Debug/netcoreapp2.2/SimpleWebApi.runtimeconfig.json
+/home/dalamus/Documents/Development/SimpleWebApi/bin/Debug/netcoreapp2.2/SimpleWebApi.runtimeconfig.dev.json
+/home/dalamus/Documents/Development/SimpleWebApi/bin/Debug/netcoreapp2.2/SimpleWebApi.dll
+/home/dalamus/Documents/Development/SimpleWebApi/bin/Debug/netcoreapp2.2/SimpleWebApi.pdb
+/home/dalamus/Documents/Development/SimpleWebApi/obj/Debug/netcoreapp2.2/SimpleWebApi.csprojAssemblyReference.cache
+/home/dalamus/Documents/Development/SimpleWebApi/obj/Debug/netcoreapp2.2/SimpleWebApi.csproj.CoreCompileInputs.cache
+/home/dalamus/Documents/Development/SimpleWebApi/obj/Debug/netcoreapp2.2/SimpleWebApi.RazorAssemblyInfo.cache
+/home/dalamus/Documents/Development/SimpleWebApi/obj/Debug/netcoreapp2.2/SimpleWebApi.RazorAssemblyInfo.cs
+/home/dalamus/Documents/Development/SimpleWebApi/obj/Debug/netcoreapp2.2/SimpleWebApi.AssemblyInfoInputs.cache
+/home/dalamus/Documents/Development/SimpleWebApi/obj/Debug/netcoreapp2.2/SimpleWebApi.AssemblyInfo.cs
+/home/dalamus/Documents/Development/SimpleWebApi/obj/Debug/netcoreapp2.2/SimpleWebApi.RazorTargetAssemblyInfo.cache
+/home/dalamus/Documents/Development/SimpleWebApi/obj/Debug/netcoreapp2.2/SimpleWebApi.dll
+/home/dalamus/Documents/Development/SimpleWebApi/obj/Debug/netcoreapp2.2/SimpleWebApi.pdb

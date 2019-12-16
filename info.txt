@@ -1,0 +1,33 @@
+Web Api hinter Apache mit Kestrel hosten
+In WebApi Project in Startup.Configure hinter der Abfrage on env.Development die Forwarded Headers Middleware
+verwenden.
+ app.UseForwardedHeaders(new ForwardedHeadersOptions{
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
+aus: https://docs.microsoft.com/de-de/aspnet/core/host-and-deploy/linux-apache?view=aspnetcore-3.0
+
+
+Auf Apache die /etc/apache2/ports.conf editieren, Listen 8080 hinzufügen (port 8080 hier Beispiel)
+In der Linux Firewall diesen port öffnen, damit er auch nach außen sichtbar wird
+Wenn noch nicht aktiv, die Module headers und proxy aktivieren
+sudo a2enmod proxy 
+sudo a2enmod headers
+apache neu starten
+sudo systemctl restart apache2
+
+Eine /etc/apache2/sites-available/simplewebapi.conf anlegen um darin den virtual host zu definieren
+Die conf den /etc/apache2/sites-enabled hinzufügen
+sudo a2ensite simplewebapi.conf
+Damit wird ein Link in /etc/apache2/sites-enabled erzeugt.
+
+Das reicht zunächst um die Proxy Funktionalität zwischen Apache und Kestrel zu testen.
+SimpleWebApi manuell starten und nur den http port verwenden, https muss in der simplewebapi.conf und
+weiteren Einstellungen noch aktiviert werden.
+SimpleWebApi wird über den /etc/systemd/system/kestrel-simplewebapi.service Service gestartet. Darin kann
+auch angegeben werden, ob api im Debug oder Production environment läuft. Ersteres hat dann auch
+gezeigt, das Data Verzeichnis nicht unterhalb der SimpleWebApi.dll liegen muss (wie in der Entwicklungs-
+umgebung), sondern parallel zum Folder simplewebapi 
+/var/www/simplewebapi und /var/www/Data.
+
+Siehe auch https://odan.github.io/2018/07/17/aspnet-core-2-ubuntu-setup.html
+und https://docs.microsoft.com/de-de/aspnet/core/host-and-deploy/linux-apache?view=aspnetcore-3.0

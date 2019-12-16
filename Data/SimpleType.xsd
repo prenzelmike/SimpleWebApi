@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns="mh.dev.st.01" targetNamespace="mh.dev.st.01"
+    elementFormDefault="qualified">
+    <xs:simpleType name="IntegerNumber">
+        <xs:restriction base="xs:int">
+            <xs:totalDigits value="5"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="SimpleType">
+        <xs:sequence>
+            <xs:element name="Id" type="IntegerNumber"></xs:element>
+            <xs:element name="Name" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="SimpleTypeDocument">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="SimpleTypes" type="SimpleType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

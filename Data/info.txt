@@ -1,0 +1,6 @@
+Class CookBook.cs generated with mono tool xsd (equivalent to VisualStudio tool xsd).
+xsd CookBook.xsd /classes /namespace:SimpleWebApi.Types
+see https://www.systutorials.com/docs/linux/man/1-xsd/
+
+To enable writing schema location in xml file when saving data via Web Api create partial class
+CookBook in file CookBookExtension.cs with property xsiSchemaLocation. 

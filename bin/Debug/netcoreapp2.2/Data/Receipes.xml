@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CookBook xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="mh.dev.cb.01 CookBook.xsd" xmlns="mh.dev.cb.01">
+    <Receipes>
+        <Id>1</Id>
+        <Code>Waffeln</Code>
+        <Ingredients>
+            <Quantity>50</Quantity>
+            <Unit>Gramm</Unit>
+            <Name>gemahlene Mandeln</Name>
+        </Ingredients>
+        <Ingredients>
+            <Quantity>50</Quantity>
+            <Unit>Gramm</Unit>
+            <Name>Kastanienmehl</Name>
+        </Ingredients>
+        <Ingredients>
+            <Quantity>50</Quantity>
+            <Unit>Gramm</Unit>
+            <Name>Braunhirse</Name>
+        </Ingredients>
+        <Ingredients>
+            <Quantity>50</Quantity>
+            <Unit>Gramm</Unit>
+            <Name>Kastanienemehl</Name>
+        </Ingredients>
+        <Ingredients>
+            <Quantity>25</Quantity>
+            <Unit>Gramm</Unit>
+            <Name>Hafer- oder Dinkelkleie</Name>
+        </Ingredients>
+        <Ingredients>
+            <Quantity>125</Quantity>
+            <Unit>Gramm</Unit>
+            <Name>Dinkel, fein gemahlen</Name>
+        </Ingredients>
+        <Ingredients>
+            <Quantity>100</Quantity>
+            <Unit>Gramm</Unit>
+            <Name>Hafer, fein gemahlen</Name>
+        </Ingredients>
+        <Ingredients>
+            <Quantity>3</Quantity>
+            <Unit>Stück</Unit>
+            <Name>Eier</Name>
+        </Ingredients>
+        <Ingredients>
+            <Quantity>50</Quantity>
+            <Unit>Milliliter</Unit>
+            <Name>Öl (zum Braten und Backen)</Name>
+        </Ingredients>
+        <Ingredients>
+            <Quantity>450</Quantity>
+            <Unit>Milliliter</Unit>
+            <Name>Milch</Name>
+        </Ingredients>
+        <Workflow>Die Eier trennen, Eiweiß schaumig schlagen. Alle Zutaten außer dem Eischnee verrühren, dann den Eischnee unter die Teigmasse heben. Eventuell Milch nachgießen.
+
+            Ei- und Milch freie Variante: Die Milch durch Hafergetränk ersetzen, je Ei einen halben fein geriebenen Apfel
+            Da die Ei- und Milch freie Variante das Waffeleisen verklebt, müssen die Ei- und Milch freien Waffeln im Wechsel mit den Ei- und Milch-Waffeln gebacken werden. Dazu die trockenen Zutaten zunächst in einer Schüssel gut vermischen. Je 40 g Kastanienmehl, Braunhirse, gemahlene Mandeln plus 30 g Hafer-/Dinkelkleie plus 170 g Mehl aus Hafer und Dinkel. Die 320 g aus trockenen Zutaten dann auf zwei Rührschüsseln aufteilen, jeweils 30 ml Öl zugeben und schließlich Ei(-Schnee)/Milch bzw. Apfel/Hafergetränk. Dann mit Ei/Milch Waffel beginnen und abwechselnd fortfahren.
+        </Workflow>
+    </Receipes>
+</CookBook>

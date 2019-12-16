@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns="mh.dev.cb.01" targetNamespace="mh.dev.cb.01"
+    elementFormDefault="qualified">
+    <xs:simpleType name="IntegerNumber">
+        <xs:restriction base="xs:int">
+            <xs:totalDigits value="5"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DecimalNumber">
+        <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="7"/>
+            <xs:fractionDigits value="3"></xs:fractionDigits>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="UnitType">
+        <xs:restriction base="xs:string">
+        <xs:enumeration value="Stück"/>
+        <xs:enumeration value="Gramm"/>
+        <xs:enumeration value="Kilogramm"/>
+        <xs:enumeration value="Liter"/>
+        <xs:enumeration value="Milliliter"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="Ingredient">
+        <xs:sequence>
+            <xs:element name="Quantity" type="DecimalNumber"></xs:element>
+            <xs:element name="Unit" type="UnitType"></xs:element>
+            <xs:element name="Name" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Receipe">
+        <xs:sequence>
+            <xs:element name="Id" type="IntegerNumber"/>
+            <xs:element name="Code" type="xs:string"/>
+            <xs:element name="Ingredients" type="Ingredient" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="Workflow" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="CookBook">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Receipes" type="Receipe" minOccurs="0" maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
